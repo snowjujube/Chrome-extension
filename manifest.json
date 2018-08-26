@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "One",
+  "version": "1.0.0",
+  "description": "一个便签",
+  "icons": {
+    "16": "img/dog.png",
+    "48": "img/dog.png",
+    "128": "img/dog.png"
+  },
+  "permissions": [
+    "contextMenus",
+    "notifications",
+    "storage",
+    "tabs",
+    "http://cn.bing.com/*",
+    "https://cn.bing.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background/redux.js",
+      "background/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "img/dog.png",
+    "default_title": "Create new Sticker",
+    "default_popup": "/popup/index.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "tabs/index.html"
+  }
+}

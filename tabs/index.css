@@ -1,0 +1,250 @@
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(100vw / 10);
+        font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@keyframes toast {
+    0% {
+        visibility: visible;
+        transform: translateX(200px);
+    }
+
+    40% {
+        transform: translateX(0);
+    }
+
+    70% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(200px);
+    }
+
+}
+
+@keyframes add {
+    0% {
+        transform: translateX(8px);
+    }
+
+    50% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+body {
+    overflow: hidden;
+    user-select: none;
+    background: rgb(0, 0, 0);
+}
+
+.blur {
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 1, 1, .5);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    opacity: 0;
+    transition: opacity ease-in-out 1.2s;
+}
+
+.light-when-use {
+    opacity: .57;
+    transition: opacity .3s cubic-bezier(.3, .5, .8, .5);
+}
+
+.light-when-use:hover {
+    opacity: .9;
+}
+
+.light-when-use:focus {
+    opacity: .9;
+}
+
+.light-when-use:focus + .app-notice {
+    opacity: .8;
+}
+
+.off {
+    background: radial-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9) 23%, transparent 0, transparent 57%, rgba(255, 255, 255, .9) 0);
+}
+
+.on {
+    background: radial-gradient(transparent, transparent 23%, rgba(255, 255, 255, .9) 0, rgba(255, 255, 255, .9) 57%, transparent 0);
+}
+
+#switcher {
+    position: absolute;
+    top: .05rem;
+    left: .05rem;
+    z-index: 1;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 100%;
+}
+
+.greeting-container {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 20vh;
+    text-align: right;
+    overflow: no-content;
+    transition: top ease-in .6s;
+}
+
+.time {
+    padding-right: .2rem;
+    font-size: .6rem;
+    font-weight: 300;
+}
+
+.hello {
+    padding-right: .2rem;
+    font-size: .3rem;
+    font-weight: lighter;
+}
+
+.username {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: auto;
+    text-align: right;
+    cursor: default;
+}
+
+.sticker-container {
+    box-sizing: border-box;
+    height: 60vh;
+    margin-left: 0;
+    margin-top: 20vh;
+    overflow-y: auto;
+    transition: opacity .4s ease-in-out;
+    padding: .1rem .2rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: start;
+}
+
+.sticker {
+    font-size: .11rem;
+    color: rgba(2, 2, 2, 0.9);
+    font-weight: 100;
+    min-height: .3rem;
+    width: 250px;
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, .7);
+    margin-bottom: 8px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: scroll;
+    animation: add .2s ease-in;
+}
+
+.sticker-text {
+    word-break: break-all;
+    line-height: 25px;
+}
+
+.sticker-copy {
+    box-sizing: border-box;
+    padding-right: 20px;
+    height: 30px;
+    width: 30px;
+    background: url(./copy.png) no-repeat;
+    background-size: 30px 30px;
+    opacity: .7;
+}
+
+.sticker-copy:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.app-container {
+    position: fixed;
+    bottom: 0;
+    height: 20vh;
+    left: 0;
+    width: 100%;
+    transition: bottom .5s ease-out;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+}
+
+.app-title {
+    padding-top: 10px;
+    font-size: .2rem;
+}
+
+.app-input {
+    font-size: .2rem;
+    margin: 0 auto;
+    display: block;
+    color: white;
+    padding-top: 30px;
+    background-color: transparent;
+    width: 2.4rem;
+    border: 0;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.app-notice {
+    padding-top: 10px;
+    font-size: .12rem;
+    opacity: 0;
+    transition: opacity .4s ease-out .4s;
+}
+
+.toast-basic {
+    font-size: 20px;
+    position: fixed;
+    width: 150px;
+    height: 60px;
+    background: rgba(1, 1, 1, .5);
+    top: calc(50vh - 30px);
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.animate-toast {
+    animation: ease-in-out toast 1.5s;
+}
+
+.first-time-use {
+    font-size: .15rem;
+    font-weight: 100;
+    position: fixed;
+    width: 500px;
+    height: 160px;
+    background: rgba(1, 1, 1, .7);
+    top: calc(50vh - 80px);
+    left: calc(50vw - 250px);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="../common/reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+    <div class="off light-when-use" id="switcher"><!--开关--></div>
+    <div class="greeting-container">
+        <div class="blur">
+            <div class="time"><span id="time" class="light-when-use"></span></div>
+            <div class="hello"><span class="light-when-use">
+                <input maxlength="10" class="username hello" id="username" placeholder="新朋友" type="text"><span id="hola"></span></span></div>
+        </div>
+    </div>
+    <div class="sticker-container">
+    </div>
+    <div class="app-container">
+        <div class="blur">
+            <h1 class="app-title light-when-use">随手记录点东西，别忘掉啦</h1>
+            <input id="app-input" class="app-input light-when-use" type="text">
+            <div class="app-notice"><span class="light-when-use">写好了记得轻击回车</span></div>
+        </div>
+    </div>
+    <div class="toast-basic">复制好啦</div>
+    <div class="first-time-use">
+        <h2 class="light-when-use">请留下您的姓名，完成后轻按回车</h2>
+        <div class="name-nput-container">
+            <input id="nameInput" class="app-input light-when-use type="text">
+        </div>
+    </div>
+</div>
+<script src="../common/clipboard.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

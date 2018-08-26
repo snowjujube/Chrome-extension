@@ -1,0 +1,127 @@
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(100vw / 20);
+        font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+}
+
+@keyframes add {
+    0% {
+        transform: translateX(8px);
+    }
+
+    50% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.light-when-use {
+    opacity: .57;
+    transition: opacity .3s cubic-bezier(.3, .5, .8, .5);
+}
+
+.light-when-use:hover {
+    opacity: .9;
+}
+
+.light-when-use:focus {
+    opacity: .9;
+}
+
+.light-when-use:focus + .app-notice {
+    opacity: .8;
+}
+
+.container {
+    height: 600px;
+    width: 400px;
+}
+
+.sticker-container {
+    box-sizing: border-box;
+    height: 80vh;
+    overflow-y: auto;
+    transition: opacity .4s ease-in-out;
+    padding: .1rem .2rem;
+    display: flex;
+    flex-flow: column;
+    align-content: start;
+}
+
+.sticker {
+    font-size: 1rem;
+    color: rgba(2, 2, 2, 0.9);
+    font-weight: 100;
+    min-height: 3rem;
+    width: 90%;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: auto;
+    animation: add .2s ease-in;
+}
+
+.sticker-text {
+    word-break: break-all;
+    line-height: 25px;
+}
+
+.sticker-copy {
+    box-sizing: border-box;
+    padding-right: 20px;
+    height: 30px;
+    width: 30px;
+    background: url(./copy.png) no-repeat;
+    background-size: 30px 30px;
+    opacity: .7;
+}
+
+.sticker-copy:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.app-container {
+    position: fixed;
+    bottom: 0;
+    height: 20vh;
+    left: 0;
+    width: 100%;
+    transition: bottom .5s ease-out;
+    text-align: center;
+    color: black;
+    font-weight: 100;
+}
+
+.app-title {
+    padding-top: 10px;
+    font-size: .2rem;
+}
+
+.app-input {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    display: block;
+    color: black;
+    padding-top: 30px;
+    width: 12rem;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.app-notice {
+    padding-top: 10px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity .4s ease-out .4s;
+}
+
+.completed {
+    text-decoration: line-through;
+}
